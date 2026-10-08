@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angélica Mioto Nails | Bio Site Oficial</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --card-border: rgba(212, 175, 55, 0.25);
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8b8;
+            --accent-color: #d4af37; /* Dourado luxo */
+            --accent-hover: #e6c65c;
+            --whatsapp-color: #1fbd58;
+            --whatsapp-hover: #179c47;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 12px;
+            background-image: radial-gradient(circle at 50% 0%, #1f180d 0%, #0b0b0b 70%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 460px;
+            background: var(--card-bg);
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Foto de Perfil Redonda e Elegante no Topo */
+        .profile-header {
+            padding: 35px 20px 10px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #1f1b14 0%, var(--card-bg) 100%);
+        }
+
+        .avatar-container {
+            width: 115px;
+            height: 115px;
+            margin: 0 auto 18px auto;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--accent-color), #8c7323);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            background: #111;
+        }
+
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-subtitle {
+            font-size: 12px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .profile-bio {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            padding: 0 10px;
+        }
+
+        .profile-content {
+            padding: 0 20px 25px 20px;
+        }
+
+        /* Botões de Ação Principais (Padrão de Luxo com Descrição) */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #202020;
+            color: var(--text-primary);
+            padding: 16px 18px;
+            border-radius: 16px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            background: #282828;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-icon {
+            font-size: 20px;
+            color: var(--accent-color);
+            background: rgba(212, 175, 55, 0.1);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn-text h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            text-align: left;
+        }
+
+        .btn-text p {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-align: left;
+            font-weight: 400;
+        }
+
+        /* Botão do WhatsApp Destacado */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #1db954);
+            border: none;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #2ae86d, #20d461);
+            border: none;
+        }
+
+        .btn-whatsapp .btn-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .btn-whatsapp .btn-text h3, 
+        .btn-whatsapp .btn-text p {
+            color: #fff;
+        }
+
+        .btn i.fa-chevron-right {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* Títulos de Seção */
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--accent-color);
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-align: left;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 8px;
+        }
+
+        /* Galeria de Fotos (4 fotos em Grid) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #202020;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Seção de Vídeos */
+        .videos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .video-box {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #111;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .video-box video {
+            width: 100%;
+            max-height: 280px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Seção de Localização e Mapa Limpa */
+        .map-section {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            background: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .map-address-info {
+            padding: 14px 16px;
+            background: rgba(212, 175, 55, 0.05);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .map-address-info i {
+            color: var(--accent-color);
+            font-size: 16px;
+        }
+
+        .map-address-info p {
+            font-size: 12px;
+            color: var(--text-primary);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 160px;
+            background: #1f1f1f;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Rodapé ConectaJá */
+        .footer {
+            text-align: center;
+            padding: 16px 20px;
+            background: #101010;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer a {
+            font-size: 11px;
+            color: #777;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Topo com Foto Redonda Perfeita -->
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img src="logo.JPG" alt="Angélica Mioto">
+            </div>
+            <h1 class="profile-title">Angélica Mioto</h1>
+            <h2 class="profile-subtitle">Nail Designer & Esmalteria</h2>
+            <p class="profile-bio">✨ Deixando mulheres ainda mais lindas<br>Esmaltação tradicional e em gel • Cutilagem • Manicure • Pedicure</p>
+        </div>
+
+        <div class="profile-content">
+            <!-- Botões de Ação Fortes e Descritivos -->
+            <div class="links-container">
+                <!-- Botão WhatsApp Principal -->
+                <a href="https://wa.me/5519994293700?text=Olá%20Angélica,%20vim%20pelo%20Bio%20Site%20e%20gostaria%20de%20agendar%20um%20horário!" class="btn btn-whatsapp" target="_blank">
+                    <div class="btn-left">
+                        <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="btn-text">
+                            <h3>Agendar Horário no WhatsApp</h3>
+                            <p>Consulte horários para unhas e esmaltação</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <!-- Botão Cursos Presenciais -->
+                <a href="https://wa.me/5519994293700?text=Olá%20Angélica,%20quero%20saber%20mais%20sobre%20os%20Cursos%20Presenciais%20para%20Iniciantes!" class="btn" target="_blank">
+                    <div class="btn-left">
+                        <div class="btn-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="btn-text">
+                            <h3>Cursos Presenciais</h3>
+                            <p>Aulas práticas para iniciantes com certificado</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <!-- Botão Instagram -->
+                <a href="https://www.instagram.com/angelicamioto" class="btn" target="_blank">
+                    <div class="btn-left">
+                        <div class="btn-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div class="btn-text">
+                            <h3>Acompanhe no Instagram</h3>
+                            <p>Veja o feed com fotos e trabalhos detalhados</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+
+            <!-- Seção de Galeria de Fotos -->
+            <h3 class="section-title">Nossos Trabalhos</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="foto1.jpg" alt="Trabalho 1"></div>
+                <div class="gallery-item"><img src="foto2.jpg" alt="Trabalho 2"></div>
+                <div class="gallery-item"><img src="foto3.jpg" alt="Trabalho 3"></div>
+                <div class="gallery-item"><img src="foto4.jpg" alt="Trabalho 4"></div>
+            </div>
+
+            <!-- Seção de Vídeos -->
+            <h3 class="section-title">Bastidores & Detalhes</h3>
+            <div class="videos-container">
+                <div class="video-box">
+                    <video src="video1.MP4" controls playsinline muted></video>
+                </div>
+                <div class="video-box">
+                    <video src="video2.MP4" controls playsinline muted></video>
+                </div>
+            </div>
+
+            <!-- Seção de Localização Integrada (Endereço + Mapa) -->
+            <h3 class="section-title">Localização</h3>
+            <div class="map-section">
+                <div class="map-address-info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Rua Mogi-Mirim, 521 - Jardim das Laranjeiras, Santa Bárbara d'Oeste - SP</p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.544521876543!2d-47.4187!3d-22.7584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c89bc2385b0001%3A0x123456789!2sRua%20Mogi-Mirim%2C%20521%20-%20Jardim%20das%20Laranjeiras%2C%20Santa%20B%C3%A1rbara%20d'Oeste%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1650000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé ConectaJá -->
+        <div class="footer">
+            <a href="https://conectaja-bio.vercel.app/" target="_blank">Desenvolvido por ConectaJá — Tecnologia que aproxima</a>
+        </div>
+    </div>
+
+</body>
+</html>
