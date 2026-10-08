@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angélica Mioto Nails | Bio Site Oficial</title>
+    <!-- Google Fonts: Cormorant Garamond e Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1c1c1c;
+            --card-border: rgba(212, 175, 55, 0.25);
+            --text-primary: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --accent-color: #d4af37; /* Ouro suave */
+            --accent-hover: #e6c65c;
+            --whatsapp-color: #25d366;
+            --whatsapp-hover: #20ba5a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Banner Widescreen de Topo */
+        .widescreen-banner {
+            width: 100%;
+            height: 180px;
+            background-color: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .widescreen-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-content {
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-subtitle {
+            font-size: 13px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .profile-bio {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* Seção de Alerta / Nova Localização */
+        .location-alert {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 24px;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .location-alert i {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-top: 2px;
+        }
+
+        .location-alert h4 {
+            font-size: 13px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .location-alert p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Botões de Ação */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #262626;
+            color: var(--text-primary);
+            padding: 15px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #333;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-left i {
+            font-size: 18px;
+            color: var(--accent-color);
+            width: 24px;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp-color);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-hover);
+            border: none;
+        }
+
+        .btn-whatsapp .btn-left i {
+            color: #fff;
+        }
+
+        .btn i.fa-chevron-right {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* Seção de Mapa */
+        .map-section {
+            margin-top: 20px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 160px;
+            background: #222;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Rodapé ConectaJá */
+        .footer {
+            text-align: center;
+            padding: 16px 20px;
+            background: #161616;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer a {
+            font-size: 11px;
+            color: #777;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Banner Retangular Widescreen -->
+        <div class="widescreen-banner">
+            <img src="logo.jpg" alt="Angélica Mioto Nails Banner">
+        </div>
+
+        <div class="profile-content">
+            <h1 class="profile-title">Angélica Mioto</h1>
+            <h2 class="profile-subtitle">Nail Designer & Esmalteria</h2>
+            <p class="profile-bio">Deixando mulheres ainda mais lindas ✨<br>Esmaltação tradicional e em gel • Cutilagem • Manicure • Pedicure</p>
+
+            <!-- Alerta de Nova Localização -->
+            <div class="location-alert">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h4>Estamos de casa nova!</h4>
+                    <p>Rua Mogi-Mirim, 521 - Jardim das Laranjeiras, Santa Bárbara d'Oeste - SP</p>
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="links-container">
+                <!-- Botão WhatsApp Principal -->
+                <a href="https://wa.me/5519994293700?text=Olá%20Angélica,%20vim%20pelo%20Bio%20Site%20e%20gostaria%20de%20agendar%20um%20horário!" class="btn btn-whatsapp" target="_blank">
+                    <div class="btn-left">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Agendar Horário no WhatsApp</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <!-- Botão Cursos Presenciais -->
+                <a href="https://wa.me/5519994293700?text=Olá%20Angélica,%20quero%20saber%20mais%20sobre%20os%20Cursos%20Presenciais%20para%20Iniciantes!" class="btn" target="_blank">
+                    <div class="btn-left">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Cursos Presenciais para Iniciantes</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <!-- Botão Instagram -->
+                <a href="https://www.instagram.com/angelicamioto" class="btn" target="_blank">
+                    <div class="btn-left">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Acompanhe no Instagram</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+
+            <!-- Mapa Embutido (Santa Bárbara d'Oeste - SP) -->
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.544521876543!2d-47.4187!3d-22.7584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c89bc2385b0001%3A0x123456789!2sRua%20Mogi-Mirim%2C%20521%20-%20Jardim%20das%20Laranjeiras%2C%20Santa%20B%C3%A1rbara%20d'Oeste%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1650000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé Institucional ConectaJá -->
+        <div class="footer">
+            <a href="https://conectaja-bio.vercel.app/" target="_blank">Desenvolvido por ConectaJá — Tecnologia que aproxima</a>
+        </div>
+    </div>
+
+</body>
+</html>
